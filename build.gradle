@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id "me.champeau.jmh" version "0.7.0"
+}
+
+group 'org.example'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+dependencies {
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+    compileClasspath 'org.openjdk.jmh:jmh-core:1.36'
+    compileClasspath 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
+    compileClasspath "me.champeau.jmh:jmh-gradle-plugin:0.7.0"
+}
+
+apply plugin: "me.champeau.jmh"
+
+test {
+    useJUnitPlatform()
+}
+
+jmh {
+    benchmarkMode = ['all'] // Benchmark mode. Available modes are: [Throughput/thrpt, AverageTime/avgt, SampleTime/sample, SingleShotTime/ss, All/all]
+    failOnError = true
+    forceGC = true
+    fork = 1
+    iterations = 5
+    threads = 4
+    warmupIterations = 3
+}
