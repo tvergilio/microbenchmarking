@@ -29,11 +29,13 @@ test {
 }
 
 jmh {
-    benchmarkMode = ['all'] // Benchmark mode. Available modes are: [Throughput/thrpt, AverageTime/avgt, SampleTime/sample, SingleShotTime/ss, All/all]
+    benchmarkMode = ['avgt'] // Benchmark mode. Available modes are: [Throughput/thrpt, AverageTime/avgt, SampleTime/sample, SingleShotTime/ss, All/all]
     failOnError = true
     forceGC = true
     fork = 1
     iterations = 5
     threads = 4
     warmupIterations = 3
+    resultFormat = 'CSV'
+    timeUnit = 'ms'
 }

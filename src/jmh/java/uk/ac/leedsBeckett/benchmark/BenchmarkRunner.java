@@ -8,8 +8,8 @@ import java.math.BigInteger;
 public class BenchmarkRunner {
 
     @Benchmark
-    public void calculateFactorialOfOneHundred() {
+    public void calculateFactorialOfOneThousand() {
         FactorialFn factorialFn = new FactorialFn();
-        factorialFn.calculateFactorial(BigInteger.valueOf(100));
+        factorialFn.calculateFactorial(BigInteger.valueOf(1000));
     }
 }
