@@ -17,9 +17,9 @@ dependencies {
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
-    compileClasspath 'org.openjdk.jmh:jmh-core:1.36'
-    compileClasspath 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
-    compileClasspath "me.champeau.jmh:jmh-gradle-plugin:0.7.0"
+    compileOnly 'org.openjdk.jmh:jmh-core:1.36'
+    compileOnly 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
+    compileOnly "me.champeau.jmh:jmh-gradle-plugin:0.7.0"
 }
 
 apply plugin: "me.champeau.jmh"
