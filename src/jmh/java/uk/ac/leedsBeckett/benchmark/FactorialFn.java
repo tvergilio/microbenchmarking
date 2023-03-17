@@ -1,4 +1,4 @@
-package uk.ac.leedsBeckett;
+package uk.ac.leedsBeckett.benchmark;
 
 import java.math.BigInteger;
 
